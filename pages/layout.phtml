@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>El Blogo</title>
+    <link rel="stylesheet" href="<?= HOME ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?= HOME ?>assets/css/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!-- en tête -->
+<header id="main-header">
+    <div class="container">
+        <a id="logo" href="index.php">
+            <img src="<?= HOME ?>assets/images/noun_Gorilla_1994005.svg">
+            <span>El Blogo</span>
+        </a>
+        <nav>
+            <a href="<?= HOME ?>admin" title="accéder au panneau d'administration">
+                <i class="fa fa-cog"></i>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- contenu principal -->
+<main id="main-content">
+    <?php include "pages/$template.phtml" ?>
+</main>
+
+<!-- pied de page -->
+<footer id="main-footer">
+    <p class="container">Je suis un pied de page</p>
+</footer>
+</body>
+</html>

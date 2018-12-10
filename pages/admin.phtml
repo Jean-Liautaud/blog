@@ -1,0 +1,58 @@
+<div id="admin" class="container">
+
+    <h2>Panneau d'administration</h2>
+    <a href="index.php?page=adminEditArticle">Créer un nouvel article</a>
+    <table id="articles">
+        <caption>Liste des articles</caption>
+        <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>auteur</th>
+            <th>date</th>
+            <th>actions</th>
+        </tr>
+        <?php foreach ($articles as $article): ?>
+            <tr>
+                <td><?= $article['id'] ?></td>
+                <td><?= substr($article['title'], 0, 30) ?></td>
+                <td><?= $article['author'] ?></td>
+                <td><?= $article['creationDate'] ?></td>
+                <td>
+                    <a href="index.php?page=adminEditArticle&id=<?= $article['id'] ?>">
+                        <i class="fa fa-pencil">
+
+                        </i>
+                    </a>
+                    <a href="index.php?page=admin&action=removeArticle&id=<?= $article['id'] ?>">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+
+    </table>
+
+    <table id="comments">
+        <caption>Liste des Commentaires</caption>
+        <tr>
+            <th>id</th>
+            <th>auteur</th>
+            <th>contenu</th>
+            <th>date</th>
+            <th>article lié</th>
+            <th>actions</th>
+        </tr>
+        <?php foreach ($comments as $comment): ?>
+            <tr>
+                <td><?= $comment['id'] ?></td>
+                <td><?= htmlentities($comment['author']) ?></td>
+                <td><?= htmlentities(substr($comment['content'], 0, 50)) ?></td>
+                <td><?= $comment['creationDate'] ?></td>
+                <td><?= $comment['articles_id'] ?></td>
+                <td>
+                    <a href="index.php?page=admin&action=removeComment&id=<?= $comment['id'] ?>">remove</a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+</div>

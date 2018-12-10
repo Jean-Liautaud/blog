@@ -1,0 +1,15 @@
+<section class="flex container">
+    <header class="fullwidth">
+        <h2>Consultez les articles sur la cuisine mondiale</h2>
+        <p class="title ">Liste des articles</p>
+    </header>
+    <?php foreach ($articles as $article): ?>
+        <article>
+            <h3><?= $article['title'] ?></h3>
+            <p>
+                <a href="index.php?page=article&id=<?= $article['id'] ?>" title="lire l'article <?= $article['title'] ?>">Lire
+                                                                                                                          l'article</a>
+            </p>
+        </article>
+    <?php endforeach; ?>
+</section>
